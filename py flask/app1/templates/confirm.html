@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Confirmed</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #e8f0fe;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .box {
+            background: #fff;
+            width: 420px;
+            padding: 25px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
+        .success {
+            background: #4CAF50;
+            padding: 12px;
+            text-align: center;
+            color: white;
+            font-size: 18px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+
+        .item {
+            margin-bottom: 12px;
+            font-size: 17px;
+            color: #333;
+        }
+
+        .item span {
+            font-weight: bold;
+            color: #222;
+        }
+
+        .btn {
+            width: 100%;
+            margin-top: 20px;
+            padding: 12px;
+            background: #4a90e2;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #357ab8;
+        }
+    </style>
+
+</head>
+<body>
+
+    <div class="box">
+
+        <div class="success">Registration Confirmed ✔</div>
+
+        <h2>Your Details</h2>
+
+        <div class="item"><span>Name:</span> {{ name }}</div>
+        <div class="item"><span>Email:</span> {{ email }}</div>
+        <div class="item"><span>Phone:</span> {{ phone }}</div>
+
+        <div class="item"><span>Password:</span> 
+            {% if password %}
+                {{ "•" * 8 }}
+            {% endif %}
+        </div>
+
+        <button class="btn" onclick="window.location.href='/home'">
+            Go Back
+        </button>
+
+    </div>
+
+</body>
+</html>
